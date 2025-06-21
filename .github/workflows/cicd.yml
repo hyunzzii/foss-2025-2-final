@@ -20,3 +20,9 @@ jobs:
 
       - name: Build Application (Skip Tests)
         run: ./gradlew build -x test
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v
+        with:
+          name: app-jar
+          path: build/libs/*.jar
